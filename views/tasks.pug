@@ -1,0 +1,32 @@
+extends layout
+
+block title
+  title Список справ
+
+block content
+  h1 Список справ
+  p.summary Усього задач: #{tasks.length}
+
+  if tasks.length === 0
+    p.empty Список порожній
+  else
+    ul.task-list
+      each task in tasks
+        li.task(class=task.completed ? 'done' : 'pending')
+          span.task-id №#{task.id}
+          |  
+          if task.completed
+            s.title #{task.title}
+            span.badge  — Виконано
+          else
+            span.title #{task.title}
+            span.badge  — В роботі
+
+  style.
+    .task-list { list-style: none; padding: 0; }
+    .task { background: #fff; padding: 12px 16px; margin-bottom: 8px; border-radius: 6px;
+            border-left: 5px solid #e0a800; }
+    .task.done { border-left-color: #28a745; color: #777; }
+    .task-id { font-weight: bold; color: #2d3e50; }
+    .badge { font-size: 13px; }
+    .done .badge { color: #28a745; font-weight: bold; }

@@ -1,0 +1,20 @@
+doctype html
+html(lang='uk')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    block title
+      title To-Do List
+    style.
+      body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0; color: #222; }
+      header { background: #2d3e50; color: #fff; padding: 16px 24px; }
+      main { max-width: 640px; margin: 24px auto; padding: 0 16px; }
+      footer { text-align: center; color: #888; font-size: 13px; padding: 24px; }
+  body
+    header
+      strong To-Do List
+      |  — Express.js + Pug
+    main
+      block content
+    footer
+      | Практичне завдання №5
